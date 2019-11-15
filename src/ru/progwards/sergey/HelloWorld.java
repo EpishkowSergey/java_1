@@ -14,6 +14,8 @@ public class HelloWorld {
         println("Мир, ты слышишь меня?");
         System.out.print("Я знаю, что 5 + 7 = ");
         System.out.println(addition(5, 7));
+        double y = 2.53 % 1;
+        System.out.println(y);
 
     }
 }
