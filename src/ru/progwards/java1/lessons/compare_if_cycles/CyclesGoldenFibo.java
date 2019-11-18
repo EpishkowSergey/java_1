@@ -6,20 +6,16 @@ public class CyclesGoldenFibo {
             number = number * -1;
         }
 
-        while (number > 9) {
+        do {
             int n = number % 10;
             if (n == digit) {
                 return true;
             }
             number = number / 10;
         }
+        while (number > 0);
 
-        if (number == digit) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return false;
     }
 
     public static int fiboNumber(int n) {
@@ -40,26 +36,33 @@ public class CyclesGoldenFibo {
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
 
+        final double n1 = 1.61703;
+        final double n2 = 1.61903;
+
         boolean itIsGold = false;
 
         double a1 = (double)a;
         double b1 = (double)b;
         double c1 = (double)c;
 
+        double findGoldNumberC = a1 / c1;
+        double findGoldNumberB = a1 / b1;
+        double findGoldNumberA = b1 / a1;
+
         if (a == b) {
-            if ((a1 / c1 > 1.61703) && (a1 / c1 < 1.61903)) {
+            if (findGoldNumberC > n1 && findGoldNumberC < n2) {
                 itIsGold = true;
             }
         }
 
         if (a == c) {
-            if ((a1 / b1 > 1.61703) && (a1 / c1 < 1.61903)) {
+            if (findGoldNumberB > n1 && findGoldNumberB < n2) {
                 itIsGold = true;
             }
         }
 
         if (b == c) {
-            if ((b1 / a1 > 1.61703) && (b1 / a1 < 1.61903)) {
+            if (findGoldNumberA > n1 && findGoldNumberA < n2) {
                 itIsGold = true;
             }
         }
@@ -68,7 +71,9 @@ public class CyclesGoldenFibo {
     }
 
     public static void main(String[] args) {
-        System.out.println(isGoldenTriangle(100, 1, 100));
+        System.out.println(containsDigit(-123, 3));
+
+        System.out.println(isGoldenTriangle(89, 55, 89));
 
         for (int i = 1; i <= 15; i++) {
             System.out.println(fiboNumber(i));
