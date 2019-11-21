@@ -11,13 +11,13 @@ public class Animal {
         ANIMAL,
         COW,
         HAMSTER,
-        DUCK;
+        DUCK
     }
 
     enum FoodKind {
         UNKNOWN,
         HAY,
-        CORN;
+        CORN
     }
 
     public AnimalKind getKind() {
@@ -30,7 +30,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "I am " + getKind() + ", eat " + getFoodKind();
+        return "I am + " + getKind() + ", eat " + getFoodKind();
     }
 
     public double getWeight() {
