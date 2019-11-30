@@ -5,9 +5,10 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] arrayInt;
 
-    public DIntArray(int[] arrayInt) {
+   /* public DIntArray(int[] arrayInt) {
         this.arrayInt = arrayInt;
     }
+    */
 
     public void add(int num) {
         int[] arrayIntAdd = Arrays.copyOf(arrayInt, arrayInt.length + 1);
@@ -50,7 +51,7 @@ public class DIntArray {
     }
 
     public static void main(String[] args) {
-        int[] arrayInt = {1, 2, 3, 4};
+       /* int[] arrayInt = {1, 2, 3, 4};
         DIntArray dIntArray = new DIntArray(arrayInt);
 
         System.out.println(Arrays.toString(arrayInt));
@@ -58,8 +59,7 @@ public class DIntArray {
         dIntArray.atInsert(2, 0);
         dIntArray.atDelete(1);
         System.out.println(dIntArray.at(3));
-
-
-
+        */
     }
+
 }
