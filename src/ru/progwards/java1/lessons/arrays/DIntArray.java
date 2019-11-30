@@ -3,16 +3,15 @@ package ru.progwards.java1.lessons.arrays;
 import java.util.Arrays;
 
 public class DIntArray {
-    private int[] arrayInt = new int[0];
+    private int[] arrayInt;
 
     public void add(int num) {
-        int[] arrayIntAdd = new int[arrayInt.length + 1];
-//        int[] arrayIntAdd = Arrays.copyOf(arrayInt, arrayInt.length + 1);
-        for (int i = 0; i < arrayInt.length; i++) {
-            arrayIntAdd[i] = arrayInt[i];
-            arrayInt = arrayIntAdd;
+        int[] addArrayInt = arrayInt;
+        arrayInt = new int[arrayInt.length + 1];
+        for (int i = 0; i < arrayInt.length - 1; i++) {
+            arrayInt[i] = addArrayInt[i];
         }
-        arrayIntAdd[arrayIntAdd.length - 1] = num;
+        arrayInt[arrayInt.length - 1] = num;
 //        System.out.println(Arrays.toString(arrayIntAdd));
     }
 
