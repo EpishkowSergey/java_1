@@ -19,33 +19,32 @@ public class DIntArray {
     }
 
     public void atInsert(int pos, int num) {
-        int[] arrayIntAtInsert = new int[arrayInt.length + 1];
+
+        int[] atInsertArrayInt = arrayInt;
+        arrayInt = new int[arrayInt.length + 1];
 
         for (int i = 0; i < pos; i++) {
-            arrayIntAtInsert[i] = arrayInt[i];
-        }
-
-        for (int i = pos + 1; i < arrayIntAtInsert.length; i++) {
-            arrayIntAtInsert[i] = arrayInt[i - 1];
-        }
-
-        arrayIntAtInsert[pos] = num;
-
-//        System.out.println(Arrays.toString(arrayIntAtInsert));
-    }
-
-    public void atDelete(int pos) {
-        int[] arrrayIntAtDelete = new int[arrayInt.length - 1];
-
-        for (int i = 0; i < pos; i++) {
-            arrrayIntAtDelete[i] = arrayInt[i];
+            arrayInt[i] = atInsertArrayInt[i];
         }
 
         for (int i = pos + 1; i < arrayInt.length; i++) {
-            arrrayIntAtDelete[i - 1] = arrayInt[i];
+            arrayInt[i] = atInsertArrayInt[i - 1];
         }
 
-//        System.out.println(Arrays.toString(arrrayIntAtDelete));
+        arrayInt[pos] = num;
+    }
+
+    public void atDelete(int pos) {
+        int[] atDeleteArrayInt = arrayInt;
+        arrayInt = new int[arrayInt.length - 1];
+
+        for (int i = 0; i < pos; i++) {
+            arrayInt[i] = atDeleteArrayInt[i];
+        }
+
+        for (int i = pos + 1; i < atDeleteArrayInt.length; i++) {
+            arrayInt[i - 1] = atDeleteArrayInt[i];
+        }
     }
 
     public int at(int pos) {
@@ -56,22 +55,38 @@ public class DIntArray {
         DIntArray dIntArray = new DIntArray();
         System.out.println(Arrays.toString(dIntArray.arrayInt));
 
-        dIntArray.add(1);
+        dIntArray.add(0);
         System.out.println(Arrays.toString(dIntArray.arrayInt));
 
-        dIntArray.add(1);
+        dIntArray.add(8);
         System.out.println(Arrays.toString(dIntArray.arrayInt));
 
+        dIntArray.add(86);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
 
-       /* int[] arrayInt = {1, 2, 3, 4};
-        DIntArray dIntArray = new DIntArray(arrayInt);
+        dIntArray.add(96);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
 
-        System.out.println(Arrays.toString(arrayInt));
-        dIntArray.add(5);
-        dIntArray.atInsert(2, 0);
-        dIntArray.atDelete(1);
+        dIntArray.add(-96);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+        dIntArray.add(7);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+        dIntArray.add(25);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+        dIntArray.add(-11);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+        dIntArray.atInsert(2,12);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+        dIntArray.atDelete(3);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
         System.out.println(dIntArray.at(3));
-        */
+
     }
 
 }
