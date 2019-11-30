@@ -5,6 +5,10 @@ import java.util.Arrays;
 public class DIntArray {
     private int[] arrayInt;
 
+    public DIntArray() {
+        this.arrayInt = new int[0];
+    }
+
     public void add(int num) {
         int[] addArrayInt = arrayInt;
         arrayInt = new int[arrayInt.length + 1];
@@ -12,7 +16,6 @@ public class DIntArray {
             arrayInt[i] = addArrayInt[i];
         }
         arrayInt[arrayInt.length - 1] = num;
-//        System.out.println(Arrays.toString(arrayIntAdd));
     }
 
     public void atInsert(int pos, int num) {
@@ -50,6 +53,16 @@ public class DIntArray {
     }
 
     public static void main(String[] args) {
+        DIntArray dIntArray = new DIntArray();
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+        dIntArray.add(1);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+        dIntArray.add(1);
+        System.out.println(Arrays.toString(dIntArray.arrayInt));
+
+
        /* int[] arrayInt = {1, 2, 3, 4};
         DIntArray dIntArray = new DIntArray(arrayInt);
 
