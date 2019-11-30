@@ -11,7 +11,11 @@ public class DIntArray {
     */
 
     public void add(int num) {
-        int[] arrayIntAdd = Arrays.copyOf(arrayInt, arrayInt.length + 1);
+        int[] arrayIntAdd = new int[arrayInt.length + 1];
+//        int[] arrayIntAdd = Arrays.copyOf(arrayInt, arrayInt.length + 1);
+        for (int i = 0; i < arrayInt.length; i++) {
+            arrayIntAdd[i] = arrayInt[i];
+        }
         arrayIntAdd[arrayIntAdd.length - 1] = num;
 //        System.out.println(Arrays.toString(arrayIntAdd));
     }
