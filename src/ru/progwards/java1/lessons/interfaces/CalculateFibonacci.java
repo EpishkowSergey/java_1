@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.interfaces;
 
-import ru.progwards.java1.lessons.compare_if_cycles.CyclesGoldenFibo;
-
 public class CalculateFibonacci {
     static CacheInfo lastFibo;
 
@@ -11,7 +9,19 @@ public class CalculateFibonacci {
             fibo = CalculateFibonacci.lastFibo.fibo;
         }
         else {
-            CalculateFibonacci.lastFibo.fibo = CyclesGoldenFibo.fiboNumber(n);
+            if (n == 1 || n == 2) {
+                return 1;
+            }
+
+            int a = 1;
+            int b = 1;
+            int f = 0;
+            for (int i = 2; i < n; i++) {
+                f = a + b;
+                a = b;
+                b = f;
+            }
+            CalculateFibonacci.lastFibo.fibo = f;
         }
         return fibo;
     }
