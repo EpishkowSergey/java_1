@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.interfaces;
 
-import org.checkerframework.checker.units.qual.C;
-
 public class CalculateFibonacci {
     static CacheInfo lastFibo = new CacheInfo();
 
