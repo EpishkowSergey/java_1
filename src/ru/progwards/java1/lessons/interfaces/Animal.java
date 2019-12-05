@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.interfaces;
 
+import java.util.Objects;
+
 public class Animal implements FoodCompare, Comparable<Animal> {
     private double weight;
 
@@ -86,5 +88,18 @@ public class Animal implements FoodCompare, Comparable<Animal> {
     @Override
     public int compareFoodPrice(Animal aminal) {
         return Double.compare(this.getFoodPrice(), aminal.getFoodPrice());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Double.compare(animal.weight, weight) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(weight);
     }
 }
