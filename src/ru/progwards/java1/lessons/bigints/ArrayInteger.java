@@ -50,7 +50,7 @@ public class ArrayInteger {
                     }
                     return false;
                 }
-                if (number > 10) {
+                if (number >= 10) {
                     digits[i] = (byte) (number % 10);
                     digits[i + 1] = (byte) (digits[i + 1] + (number / 10));
 
@@ -68,11 +68,11 @@ public class ArrayInteger {
        System.out.println(Arrays.toString(arrayInteger.digits));
        System.out.println(arrayInteger.toInt());
 
-//        ArrayInteger arrayInteger1 = new ArrayInteger(7);
-//        arrayInteger1.fromInt(new BigInteger("923"));
+        ArrayInteger arrayInteger1 = new ArrayInteger(7);
+        arrayInteger1.fromInt(new BigInteger("6758401"));
 
-//        System.out.println(arrayInteger.add(arrayInteger1));
-//        System.out.println(Arrays.toString(arrayInteger.digits));
+        System.out.println(arrayInteger.add(arrayInteger1));
+        System.out.println(Arrays.toString(arrayInteger.digits));
 
 
     }
