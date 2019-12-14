@@ -6,7 +6,7 @@ import java.math.BigInteger;
 import static java.lang.Math.abs;
 
 public class BigAlgebra {
-    BigDecimal fastPow(BigDecimal num, int pow) {
+   static BigDecimal fastPow(BigDecimal num, int pow) {
         BigDecimal result = new BigDecimal(1);
         if (pow == 0) {
            return result;
@@ -23,7 +23,7 @@ public class BigAlgebra {
         return result;
     }
 
-    BigInteger fibonacci(int n) {
+   static BigInteger fibonacci(int n) {
         BigInteger fibo = new BigInteger(String.valueOf(n));
 
         if (fibo.compareTo(new BigInteger("1")) == 0 || fibo.compareTo(new BigInteger("2")) == 0) {
