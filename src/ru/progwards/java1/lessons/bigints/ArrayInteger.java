@@ -41,15 +41,25 @@ public class ArrayInteger {
     }
 
     boolean add(ArrayInteger num) {
+        boolean result = false;
+        if (digits.length < num.digits.length) {
+            for (int i = 0; i < digits.length; i++) {
+                digits[i]  = 0;
+            }
+            return false;
+        }
+
+        if (digits.length == num.digits.length) {
             for (int i = 0; i < digits.length; i++) {
                 byte number = (byte) (digits[i] + num.digits[i]);
-                System.out.println(number);
+
                 if (number >= 10 & i == digits.length - 1) {
                     for (int j = 0; j < digits.length; j++) {
                         digits[j] = 0;
                     }
                     return false;
                 }
+
                 if (number >= 10) {
                     digits[i] = (byte) (number % 10);
                     digits[i + 1] = (byte) (digits[i + 1] + (number / 10));
@@ -58,22 +68,45 @@ public class ArrayInteger {
                     digits[i] = number;
                 }
             }
-            return true;
+            result = true;
+        }
+
+        if (digits.length > num.digits.length) {
+            for (int i = 0; i < num.digits.length; i++) {
+                byte number = (byte) (digits[i] + num.digits[i]);
+
+                if (number >= 10 & digits[num.digits.length] == 9) {
+                    for (int j = 0; j < digits.length; j++) {
+                        digits[j] = 0;
+                    }
+                    return false;
+                }
+
+                if (number >= 10) {
+                    digits[i] = (byte) (number % 10);
+                    digits[i + 1] = (byte) (digits[i + 1] + (number / 10));
+
+                } else {
+                    digits[i] = number;
+                }
+            }
+            result = true;
+        }
+        return result;
     }
 
+
     public static void main(String[] args) {
-        ArrayInteger arrayInteger = new ArrayInteger(7);
+        ArrayInteger arrayInteger = new ArrayInteger(5);
 //        System.out.println(Arrays.toString(arrayInteger.digits));
-        arrayInteger.fromInt(new BigInteger("1048576"));
+        arrayInteger.fromInt(new BigInteger("10485"));
        System.out.println(Arrays.toString(arrayInteger.digits));
        System.out.println(arrayInteger.toInt());
 
-        ArrayInteger arrayInteger1 = new ArrayInteger(7);
-        arrayInteger1.fromInt(new BigInteger("6758401"));
+        ArrayInteger arrayInteger1 = new ArrayInteger(6);
+        arrayInteger1.fromInt(new BigInteger("675840"));
 
         System.out.println(arrayInteger.add(arrayInteger1));
         System.out.println(Arrays.toString(arrayInteger.digits));
-
-
     }
 }
