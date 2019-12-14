@@ -34,7 +34,7 @@ public class ArrayInteger {
         }
 
         for (int i = 0; i < digits.length; i++) {
-            bigInteger = bigInteger.add(new BigInteger(String.valueOf(digits[i] * (byte) Math.pow(10, i))));
+            bigInteger = bigInteger.add(new BigInteger(String.valueOf(digits[i] * (int)Math.pow(10, i))));
         }
 
         return bigInteger;
@@ -62,17 +62,17 @@ public class ArrayInteger {
     }
 
     public static void main(String[] args) {
-        ArrayInteger arrayInteger = new ArrayInteger(3);
-        System.out.println(Arrays.toString(arrayInteger.digits));
-        arrayInteger.fromInt(new BigInteger("159"));
-        System.out.println(Arrays.toString(arrayInteger.digits));
-        System.out.println(arrayInteger.toInt());
+        ArrayInteger arrayInteger = new ArrayInteger(7);
+//        System.out.println(Arrays.toString(arrayInteger.digits));
+        arrayInteger.fromInt(new BigInteger("1048576"));
+       System.out.println(Arrays.toString(arrayInteger.digits));
+       System.out.println(arrayInteger.toInt());
 
-        ArrayInteger arrayInteger1 = new ArrayInteger(3);
-        arrayInteger1.fromInt(new BigInteger("923"));
+//        ArrayInteger arrayInteger1 = new ArrayInteger(7);
+//        arrayInteger1.fromInt(new BigInteger("923"));
 
-        System.out.println(arrayInteger.add(arrayInteger1));
-        System.out.println(Arrays.toString(arrayInteger.digits));
+//        System.out.println(arrayInteger.add(arrayInteger1));
+//        System.out.println(Arrays.toString(arrayInteger.digits));
 
 
     }
