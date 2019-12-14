@@ -13,4 +13,5 @@ public class ByteInteger extends AbsInteger {
                 "aByte=" + aByte +
                 '}';
     }
+
 }
