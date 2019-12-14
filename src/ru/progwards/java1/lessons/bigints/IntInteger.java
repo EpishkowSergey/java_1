@@ -9,8 +9,6 @@ public class IntInteger extends AbsInteger{
 
     @Override
     public String toString() {
-        return "IntInteger{" +
-                "anInt=" + anInt +
-                '}';
+        return String.valueOf(anInt);
     }
 }

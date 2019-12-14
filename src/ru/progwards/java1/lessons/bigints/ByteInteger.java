@@ -9,9 +9,7 @@ public class ByteInteger extends AbsInteger {
 
     @Override
     public String toString() {
-        return "ByteInteger{" +
-                "aByte=" + aByte +
-                '}';
+        return String.valueOf(aByte);
     }
 
 }
