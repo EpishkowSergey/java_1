@@ -11,4 +11,9 @@ public class ShortInteger extends AbsInteger {
     public String toString() {
         return String.valueOf(aShort);
     }
+
+    @Override
+    public int getValue() {
+        return aShort;
+    }
 }

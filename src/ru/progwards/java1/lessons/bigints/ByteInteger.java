@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.bigints;
 
-import java.util.Objects;
-
 public class ByteInteger extends AbsInteger {
     byte aByte;
 
@@ -12,5 +10,10 @@ public class ByteInteger extends AbsInteger {
     @Override
     public String toString() {
         return String.valueOf(aByte);
+    }
+
+    @Override
+    public int getValue() {
+        return aByte;
     }
 }
