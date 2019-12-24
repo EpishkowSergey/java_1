@@ -34,7 +34,7 @@ public class ArrayInteger {
         }
 
         for (int i = 0; i < digits.length; i++) {
-            bigInteger = bigInteger.add(new BigInteger(String.valueOf(digits[i] * (int)Math.pow(10, i))));
+            bigInteger = bigInteger.add(new BigInteger(String.valueOf(new BigInteger(String.valueOf(digits[i])).multiply(BigInteger.TEN.pow(i)))));
         }
 
         return bigInteger;
