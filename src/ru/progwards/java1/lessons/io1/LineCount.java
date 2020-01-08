@@ -12,7 +12,7 @@ public class LineCount {
                 Scanner scanner = new Scanner(reader);
                 while (scanner.hasNextLine()) {
                     String strFromFile = scanner.nextLine();
-                    if (strFromFile == "\n") {
+                    if (strFromFile.equals("")) {
                         i++;
                     }
                 }
