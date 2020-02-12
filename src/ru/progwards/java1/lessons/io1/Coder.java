@@ -20,7 +20,7 @@ public class Coder {
                         newSymbol[i] = code[(int)(symbol[i])];
                     }
                     String strToFile = String.valueOf(newSymbol);
-                    FileWriter fileWriter = new FileWriter(outFileName);
+                    FileWriter fileWriter = new FileWriter(outFileName, true);
                     fileWriter.write(strToFile);
                     fileWriter.close();
                     }
