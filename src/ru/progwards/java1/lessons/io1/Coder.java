@@ -12,12 +12,11 @@ public class Coder {
         try {
             FileReader reader = new FileReader(inFileName);
             try {
-                Scanner scanner = new Scanner(reader);
                 FileWriter writer = new FileWriter(outFileName, true);
                 try {
-                    while (scanner.hasNext()) {
-                        String symbol = scanner.next();
-                        writer.write(code[Integer.parseInt(symbol)]);
+                    int symbol;
+                    while ((symbol = reader.read()) != -1) {
+                        writer.write(code[symbol]);
                     }
                 }
                 finally {
