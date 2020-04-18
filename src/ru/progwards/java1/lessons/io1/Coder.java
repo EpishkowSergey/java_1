@@ -16,7 +16,7 @@ public class Coder {
                 try {
                     int symbol;
                     while ((symbol = reader.read()) != -1) {
-                        writer.write(code[symbol]);
+                            writer.write(code[symbol]);
                     }
                 }
                 finally {
@@ -26,7 +26,7 @@ public class Coder {
             finally {
                 reader.close();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             try {
                 FileWriter writer = new FileWriter(logName);
                 try {
