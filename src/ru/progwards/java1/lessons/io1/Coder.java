@@ -1,5 +1,6 @@
 package ru.progwards.java1.lessons.io1;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,35 +13,31 @@ public class Coder {
             FileReader reader = new FileReader(inFileName);
             try {
                 Scanner scanner = new Scanner(reader);
-                while (scanner.hasNextLine()) {
-                    String strFromFile = scanner.nextLine();
-                    char[] symbol = strFromFile.toCharArray();
-                    char[] newSymbol = new char[symbol.length];
-                    for (int i = 0; i < symbol.length; i++) {
-                        newSymbol[i] = code[(int)(symbol[i])];
-                    }
-                    String strToFile = String.valueOf(newSymbol);
-                    FileWriter fileWriter = new FileWriter(outFileName, true);
-                    fileWriter.write(strToFile);
-                    fileWriter.close();
+                FileWriter writer = new FileWriter(outFileName, true);
+                try {
+                    while (scanner.hasNext()) {
+                        String symbol = scanner.next();
+                        writer.write(code[Integer.parseInt(symbol)]);
                     }
                 }
+                finally {
+                    writer.close();
+                }
+            }
             finally {
                 reader.close();
             }
-        }
-        catch (Exception e) {
+        } catch (IOException e) {
             try {
-                FileWriter fileWriter = new FileWriter(logName);
+                FileWriter writer = new FileWriter(logName);
                 try {
-                    fileWriter.write(e.getMessage());
-                }
-                finally {
-                    fileWriter.close();
+                    writer.write(e.getMessage());
+                } finally {
+                    writer.close();
                 }
             } catch (IOException ex) {
-                ex.printStackTrace();
             }
+
         }
     }
 }
