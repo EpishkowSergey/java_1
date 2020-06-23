@@ -37,10 +37,10 @@ public class Creator {
     public static Collection<Integer> fill3(int n) {
         List<Integer> arrayList = new ArrayList<>(n * 3);
 
-        for (int i = 0; i < n * 3; i++) {
-            String num = "";
-            num = num + i + i * i + i * i * i;
-            arrayList.add(Integer.parseInt(num));
+        for (int i = 0; i < n; i++) {
+            arrayList.add(i);
+            arrayList.add(i * i);
+            arrayList.add(i * i * i);
         }
 
         return arrayList;
