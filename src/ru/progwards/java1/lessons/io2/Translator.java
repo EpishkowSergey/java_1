@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.io2;
 
+import org.checkerframework.checker.units.qual.A;
+
 import java.util.Arrays;
 
 public class Translator {
@@ -45,13 +47,14 @@ public class Translator {
         }
 
         out = out.trim();
+
         return out;
     }
 
     public static void main(String[] args) {
-        String[] inLang = {"hello", "world"};
-        String[] outLang = {"привет" , "мир"};
-        String sentence = "Hello World!!! hello";
+        String[] inLang = {"make", "love", "not", "war"};
+        String[] outLang = {"твори", "любовь", "не", "войну"};
+        String sentence =  "Not war - love make!";
         Translator translator = new Translator(inLang, outLang);
         System.out.println(translator.translate(sentence));
     }

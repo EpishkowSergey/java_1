@@ -135,7 +135,7 @@ public class ExampleBot extends ProgwardsTelegramBot {
         bot.addTags("Холодный чай", "напит, пить, чай, липтон, лимон");
         bot.addTags("Сок", "напит, пить, сок, апельсиноый, яблочный, вишневый");
 
-//        bot.start();
+       bot.start();
         bot.test();
     }
 
