@@ -68,15 +68,21 @@ public class Finder {
         for (int i = 0; i < arrayList.size(); i++) {
             String str = arrayList.get(i);
             int count = 0;
+
             for (int j = 0; j < arrayList.size(); j++) {
                 if (arrayList.get(i).equals(arrayList.get(j))) {
                     count++;
                 }
+                else {
+                    break;
+                }
             }
+
             if (!str.equals(name) && num < count) {
                 name = str;
                 num = count;
             }
+
         }
 
         return name + " : " + num;
