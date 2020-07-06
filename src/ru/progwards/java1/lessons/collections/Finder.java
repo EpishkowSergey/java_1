@@ -85,6 +85,6 @@ public class Finder {
 
         }
 
-        return name + " : " + num;
+        return name + ":" + num;
     }
 }
