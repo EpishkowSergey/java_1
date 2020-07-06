@@ -69,7 +69,7 @@ public class Finder {
             String str = arrayList.get(i);
             int count = 0;
 
-            for (int j = 0; j < arrayList.size(); j++) {
+            for (int j = i; j < arrayList.size(); j++) {
                 if (arrayList.get(i).equals(arrayList.get(j))) {
                     count++;
                 }
