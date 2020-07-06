@@ -12,14 +12,21 @@ public class Finder {
         result.add(arrayList.get(0));
         result.add(arrayList.get(1));
         Integer sum = arrayList.get(0) + arrayList.get(1);
+        int index1 = 0;
+        int index2 = 1;
 
         for (int i = 1; i < arrayList.size() - 1; i++) {
             if (arrayList.get(i) + arrayList.get(i + 1) < sum) {
                 sum = arrayList.get(i) + arrayList.get(i + 1);
                 result.set(0, arrayList.get(i));
                 result.set(1, arrayList.get(i + 1));
+                index1 = i;
+                index2 = i + 1;
             }
         }
+
+        result.set(0, index1);
+        result.set(1, index2);
 
         return result;
     }
