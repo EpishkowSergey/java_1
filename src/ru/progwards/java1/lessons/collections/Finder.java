@@ -62,7 +62,7 @@ public class Finder {
     public static String findSimilar(Collection<String> names) {
         ArrayList<String> arrayList = (ArrayList<String>) names;
 
-        String name = arrayList.get(0);
+        String name = "";
         int num = 0;
 
         for (int i = 0; i < arrayList.size(); i++) {
@@ -79,6 +79,10 @@ public class Finder {
             }
 
             if (str.equals(name) && num < count) {
+                num = count;
+            }
+
+            if (!str.equals(name) && num < count) {
                 name = str;
                 num = count;
             }
