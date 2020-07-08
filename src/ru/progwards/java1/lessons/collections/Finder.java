@@ -49,13 +49,17 @@ public class Finder {
         ArrayList<Integer> arrayList = (ArrayList<Integer>) numbers;
 
         for (int i = 1; i <= arrayList.size(); i++) {
+            int num = 0;
             for (int j = 0; j < arrayList.size(); j++) {
-                if (arrayList.get(j) != i) {
-                    return false;
+                if (arrayList.get(j) == i) {
+                    num++;
                 }
             }
+            if (num == 0) {
+                return false;
+            }
         }
-
+        
         return true;
     }
 
