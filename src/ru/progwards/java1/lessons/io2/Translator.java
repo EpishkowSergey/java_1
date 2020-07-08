@@ -26,21 +26,26 @@ public class Translator {
                 }
             }
             str = str.toLowerCase();
-            for (int j = 0; j < inLang.length; j++) {
-                if (str.equals(inLang[j])) {
-                    String in = "";
+            if (str.equals("")) {
+                out = out + arrSentence[i] + " ";
+            }
+            else {
+                for (int j = 0; j < inLang.length; j++) {
+                    if (str.equals(inLang[j])) {
+                        String in = "";
 
-                    if (arrSentence[i].substring(0, 1).equals(arrSentence[i].substring(0, 1).toUpperCase())) {
-                        in = outLang[j].substring(0, 1).toUpperCase() + outLang[j].substring(1);
-                    } else {
-                        in = outLang[j];
-                    }
+                        if (arrSentence[i].substring(0, 1).equals(arrSentence[i].substring(0, 1).toUpperCase())) {
+                            in = outLang[j].substring(0, 1).toUpperCase() + outLang[j].substring(1);
+                        } else {
+                            in = outLang[j];
+                        }
 
-                    if (str.length() == arrSentence[i].length()) {
-                        out = out + in + " ";
-                    } else {
-                        int substr = arrSentence[i].length() - (arrSentence[i].length() - str.length());
-                        out = out + in + arrSentence[i].substring(substr) + " ";
+                        if (str.length() == arrSentence[i].length()) {
+                            out = out + in + " ";
+                        } else {
+                            int substr = arrSentence[i].length() - (arrSentence[i].length() - str.length());
+                            out = out + in + arrSentence[i].substring(substr) + " ";
+                        }
                     }
                 }
             }
