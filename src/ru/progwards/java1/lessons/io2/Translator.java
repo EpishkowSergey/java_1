@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.io2;
 
-import org.checkerframework.checker.units.qual.A;
-
 import java.util.Arrays;
 
 public class Translator {
